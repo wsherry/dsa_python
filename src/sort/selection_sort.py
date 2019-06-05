@@ -10,7 +10,11 @@ the list is fully sorted.
 
 
 def selection_sort(arr):
-    """simple selection sort"""
+    """
+    simple selection sort
+    time: O(n^2)
+    space: O(1)
+    """
     for i, _ in enumerate(arr):
         min_idx = i
         for j in range(i + 1, len(arr)):

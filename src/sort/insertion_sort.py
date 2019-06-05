@@ -1,5 +1,9 @@
 """
-Insertion sort
+Insertion sort is normally faster than bubble sort and selection sort. On
+each loop iteration, insertion sort removes one element from the array. It
+then finds the location where that element belongs within another sorted
+array and inserts it there. It repeats this process until no input elements
+remain.
 """
 
 
