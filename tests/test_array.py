@@ -21,17 +21,20 @@ def test_two_sum_naive():
 
 def test_two_sum_dict():
     """test two sum dict"""
-    actual = two_sum_dict([2, 11, 7, 9], target=9)
-    expected = (0, 2)
-    assert actual == expected
+    test_cases = (
+        ([2, 11, 7, 9], 9, (0, 2)),
+        ([-3, 5, 2, 3, 8, -9], 0, (0, 3)),
+        ([-3, 5, 2, 3, 8, -9], 6, None),
+    )
 
-    actual = two_sum_dict([-3, 5, 2, 3, 8, -9], target=0)
-    expected = (0, 3)
-    assert actual == expected
+    for args in test_cases:
+        actual = two_sum_dict(*args[:-1])
+        expected = args[-1]
+        assert actual == expected
 
-    actual = two_sum_dict([-3, 5, 2, 3, 8, -9], target=6)
-    expected = None
-    assert actual == expected
+        actual = two_sum_naive(*args[:-1])
+        expected = args[-1]
+        assert actual == expected
 
 
 def test_find_peak():
@@ -44,5 +47,5 @@ def test_find_peak():
     )
     for args in test_cases:
         actual = find_peak(*args[:-1])
-        expected = args[1]
+        expected = args[-1]
         assert actual == expected
