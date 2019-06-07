@@ -1,35 +1,20 @@
 """test sorting alogrithms"""
-from src.sort import (
-    insertion_sort,
-    insertion_sort_optimized,
-    selection_sort,
-    merge_sort,
-)
+from src.sort import insertion_sort
+from src.sort import insertion_sort_optimized
+from src.sort import merge_sort
+from src.sort import selection_sort
 
 
-def test_insertion_sort():
-    """test insertion sort"""
-    actual = insertion_sort([1, 5, 65, 23, 57, 1232])
-    expected = [1, 5, 23, 57, 65, 1232]
-    assert actual == expected
+def test_sort():
+    """test sorting algorithms"""
+    test_cases = (
+        ([0], [0]),
+        ([2, 1], [1, 2]),
+        ([1, 5, 65, 23, 57, 1232], [1, 5, 23, 57, 65, 1232]),
+    )
 
-
-def test_insertion_sort_optimized():
-    """test insertion sort optimized"""
-    actual = insertion_sort_optimized([1, 5, 65, 23, 57, 1232])
-    expected = [1, 5, 23, 57, 65, 1232]
-    assert actual == expected
-
-
-def test_selection_sort():
-    """test selection sort"""
-    actual = selection_sort([1, 5, 65, 23, 57, 1232])
-    expected = [1, 5, 23, 57, 65, 1232]
-    assert actual == expected
-
-
-def test_merge_sort():
-    """test merge sort"""
-    actual = merge_sort([1, 5, 65, 23, 57, 1232])
-    expected = [1, 5, 23, 57, 65, 1232]
-    assert actual == expected
+    for args, expected in test_cases:
+        assert insertion_sort(args) == expected
+        assert insertion_sort_optimized(args) == expected
+        assert selection_sort(args) == expected
+        assert merge_sort(args) == expected
