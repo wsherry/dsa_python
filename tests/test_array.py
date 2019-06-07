@@ -1,4 +1,5 @@
 """test array alogrithms"""
+from src.array import find_peak
 from src.array import two_sum_dict
 from src.array import two_sum_naive
 
@@ -31,3 +32,17 @@ def test_two_sum_dict():
     actual = two_sum_dict([-3, 5, 2, 3, 8, -9], target=6)
     expected = None
     assert actual == expected
+
+
+def test_find_peak():
+    """test find peak recursive"""
+    test_cases = (
+        ([10, 20, 30, 40, 50], 4),
+        ([1, 2, 3, 1], 2),
+        ([1], 0),
+        ([4, 3, 2, 1], 0),
+    )
+    for args in test_cases:
+        actual = find_peak(*args[:-1])
+        expected = args[1]
+        assert actual == expected
