@@ -17,7 +17,7 @@ from typing import List
 from typing import Tuple
 
 
-def two_sum_naive(arr, target):
+def two_sum_naive(arr: List[int], target: int) -> Tuple[int]:
     """
     time: O(n^2)
     space: O(1)

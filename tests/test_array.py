@@ -12,7 +12,7 @@ def test_two_sum():
         ([-3, 5, 2, 3, 8, -9], 6, None),
     )
 
-    for *args, expected in test_cases:
+    for * args, expected in test_cases:
         assert two_sum_dict(*args) == expected
         assert two_sum_naive(*args) == expected
 
