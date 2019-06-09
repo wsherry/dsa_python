@@ -15,7 +15,7 @@ Example:
 """
 
 
-def preprocess(pattern):
+def _preprocess(pattern):
     """
     Note the last occurence index of each character in the pattern.
     time: O(m)
@@ -23,8 +23,8 @@ def preprocess(pattern):
     where m is the size of the pattern.
     """
     result = {}
-    for index, element in enumerate(pattern):
-        result[element] = index
+    for i, element in enumerate(pattern):
+        result[element] = i
     return result
 
 
@@ -35,7 +35,7 @@ def boyer_moore(input_string, pattern):
     note although the upperbound is the same as the brute force solution, it performs
     better regardless of the input.
     """
-    last_occurence = preprocess(pattern)
+    last_occurence = _preprocess(pattern)
     i = j = len(pattern) - 1
     while i <= len(input_string) - 1:
         # Match as many characters as possible, starting from the rear of the pattern.
@@ -57,3 +57,4 @@ def boyer_moore(input_string, pattern):
             j = len(pattern) - 1
             # Note: a minumum of j guarrantees we do not move so far back that we start
             # matching again from a section we've already eliminated.
+    
