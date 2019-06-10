@@ -9,6 +9,8 @@ def test_pattern_match():
         ("ABBCBBD", "BC", [2]),
         ("ABBCBEBCBD", "BC", [2, 6]),
         ("BCBCBC", "BC", [0, 2, 4]),
+        ("BCBCBCBCBCCBBCBCBCBCBCCBBCBCBCBCBCCB", "BCBCBCBCBCCB", [0, 12, 24]),
+        ("AA", "ZZ", []),
     )
 
     for *args, expected in test_cases:
