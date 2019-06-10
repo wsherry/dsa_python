@@ -10,8 +10,8 @@ be found.
 
 Example:
     Given input_string = "ABBCDDBCE", pattern = "BC",
-    Because input_string[2:4] == input_string[6,8]
-    return 2,6
+    Because input_string[2:4] == input_string[6,8] == "BC"
+    return 2, 6
 """
 
 
@@ -33,7 +33,7 @@ def boyer_moore(input_string, pattern):
     time: O(mn)
     space: O(m)
     note although the upperbound is the same as the brute force solution, it performs
-    better regardless of the input.
+    better for almost all inputs.
     """
     last_occurence = _preprocess(pattern)
     i = j = len(pattern) - 1
